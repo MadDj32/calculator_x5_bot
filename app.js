@@ -2,7 +2,7 @@ let tg = window.Telegram.WebApp;
 
 tg.expand();
 
-tg.MainButton.textColor = "#FFFFFF";
+tg.MainButton.textColor = "#000000";
 tg.MainButton.color = "#FF8256";
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -31,11 +31,11 @@ function calculateNewPremium() {
     const speed = parseFloat(document.getElementById('speed').value);
     const replacements = parseFloat(document.getElementById('replacements').value);
 
-    // Определение второго значения для P2
-    let p2SecondValue = defectRate === 1.1 ? 3 : 2;
+    // Определение множителя для P2
+    let p2Multiplier = defectRate === 1.1 ? 3 : 2;
 
     // Расчет премии
-    let premium = positions * defectRate * p2SecondValue * speed * replacements;
+    let premium = positions * defectRate * p2Multiplier * speed * replacements;
 
     // Округление до двух знаков после запятой
     premium = Math.round(premium * 100) / 100;

@@ -1,82 +1,77 @@
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
-    padding: 20px;
-    background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Яркий градиентный фон */
-    color: #222; /* Общий цвет текста */
+    padding: 10px;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    color: #222;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     overflow: hidden;
-    transition: background 0.5s; /* Плавный переход для фона */
+    transition: background 0.5s;
 }
 
 #app {
-    max-width: 600px;
     width: 100%;
-    background: rgba(255, 255, 255, 0.95); /* Полупрозрачный фон */
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.95);
     padding: 20px;
     border-radius: 15px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.2); /* Увеличен тень */
-    border: 1px solid #ccc; /* Более темная рамка */
-    backdrop-filter: blur(10px); /* Эффект размытия */
-    transition: transform 0.3s, box-shadow 0.3s; /* Плавные переходы */
-}
-
-#app:hover {
-    transform: translateY(-5px); /* Поднятие при наведении */
-    box-shadow: 0 12px 40px rgba(0,0,0,0.25); /* Увеличен тень при наведении */
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    border: 1px solid #ccc;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 h1, h2 {
     text-align: center;
-    color: #222; /* Более темный цвет */
+    color: #222;
     margin-bottom: 20px;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Тень для текста */
-    transition: color 0.3s, text-shadow 0.3s; /* Плавные переходы */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    transition: color 0.3s, text-shadow 0.3s;
 }
 
 .tabs {
     display: flex;
     margin-bottom: 20px;
-    border-bottom: 1px solid #ccc; /* Более темная разделительная линия */
+    border-bottom: 1px solid #ccc;
 }
 
 .tab-button {
     flex: 1;
     padding: 10px;
     border: none;
-    background: linear-gradient(135deg, #FFB499, #FF8256); /* Градиентный фон */
+    background: linear-gradient(135deg, #FFB499, #FF8256);
     cursor: pointer;
     color: black;
-    font-weight: bold; /* Сделать текст кнопок жирным */
-    transition: background 0.3s, transform 0.3s; /* Добавлена анимация */
-    border-radius: 10px 10px 0 0; /* Закругленные углы сверху */
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Тень для текста */
+    font-weight: bold;
+    transition: background 0.3s, transform 0.3s;
+    border-radius: 10px 10px 0 0;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 
 .tab-button.active {
-    background: linear-gradient(135deg, #FF8256, #FFB499); /* Градиентный фон */
+    background: linear-gradient(135deg, #FF8256, #FFB499);
     color: black;
-    transform: translateY(-2px); /* Небольшое поднятие */
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Тень для текста */
+    transform: translateY(-2px);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 
 .tab-button:hover {
-    background: linear-gradient(135deg, #FF8256, #FFB499); /* Градиентный фон */
-    transform: translateY(-2px); /* Небольшое поднятие */
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Тень для текста */
+    background: linear-gradient(135deg, #FF8256, #FFB499);
+    transform: translateY(-2px);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 
 .tab-content {
     display: none;
     padding: 15px;
     border-radius: 10px;
-    background: rgba(255, 255, 255, 0.95); /* Полупрозрачный фон */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Тень для контента */
-    backdrop-filter: blur(10px); /* Эффект размытия */
-    transition: transform 0.3s, box-shadow 0.3s; /* Плавные переходы */
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .tab-content.active {
@@ -84,29 +79,19 @@ h1, h2 {
     font-weight: bold;
 }
 
-.tab-content:hover {
-    transform: translateY(-5px); /* Поднятие при наведении */
-    box-shadow: 0 8px 30px rgba(0,0,0,0.2); /* Увеличен тень при наведении */
-}
-
 .input-group {
     margin-bottom: 20px;
-    display: flex; /* Используем flexbox для выравнивания */
-    flex-direction: column; /* Выравниваем элементы по вертикали */
+    display: flex;
+    flex-direction: column;
 }
 
 label {
     display: block;
-    margin-bottom: 5px; /* Добавляем отступ между лейблом и инпутом */
-    color: #222; /* Более темный цвет */
+    margin-bottom: 5px;
+    color: #222;
     font-weight: bold;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Тень для текста */
-    transition: color 0.3s, text-shadow 0.3s; /* Плавные переходы */
-}
-
-.input-container {
-    display: flex;
-    justify-content: flex-end; /* Выравниваем инпуты по правому краю */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    transition: color 0.3s, text-shadow 0.3s;
 }
 
 input, select {
@@ -114,85 +99,55 @@ input, select {
     font-weight: bold;
     width: 100%;
     padding: 10px;
-    border: 2px solid #FF8256; /* Сохраняем исходный цвет */
+    border: 2px solid #FF8256;
     border-radius: 10px;
-    background: rgba(255, 255, 255, 0.95); /* Полупрозрачный фон */
-    color: #222; /* Более темный цвет */
-    transition: border-color 0.3s, box-shadow 0.3s; /* Добавлена анимация */
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Тень для текста */
+    background: rgba(255, 255, 255, 0.95);
+    color: #222;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 
 input:focus, select:focus {
-    border-color: #FF4500; /* Более темный оттенок */
+    border-color: #FF4500;
     outline: none;
-    box-shadow: 0 0 8px rgba(255, 69, 0, 0.7); /* Тень при фокусе */
+    box-shadow: 0 0 8px rgba(255, 69, 0, 0.7);
 }
 
 button {
-    background: linear-gradient(135deg, #FF8256, #FFB499); /* Градиентный фон */
+    background: linear-gradient(135deg, #FF8256, #FFB499);
     color: black;
     border: none;
     padding: 15px;
     border-radius: 10px;
     cursor: pointer;
-    font-weight: bold; /* Сделать текст кнопок жирным */
-    display: block; /* Делаем кнопку блочным элементом */
-    width: 100%; /* Занимает всю доступную ширину */
-    margin-top: 20px; /* Добавляем отступ сверху */
-    transition: background 0.3s, transform 0.3s; /* Добавлена анимация */
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Тень для текста */
+    font-weight: bold;
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    transition: background 0.3s, transform 0.3s;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 
 button:hover {
-    background: linear-gradient(135deg, #FF8256, #FFB499); /* Градиентный фон */
-    transform: translateY(-2px); /* Небольшое поднятие */
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Тень для текста */
+    background: linear-gradient(135deg, #FF8256, #FFB499);
+    transform: translateY(-2px);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 
 #new-result, #old-result {
     font-weight: bold;
     margin-top: 25px;
     font-weight: bold;
-    color: #222; /* Более темный цвет */
+    color: #222;
     text-align: left;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Тень для текста */
-    transition: color 0.3s, text-shadow 0.3s; /* Плавные переходы */
-}
-
-/* Адаптивность для больших экранов */
-@media (min-width: 768px) {
-    #app {
-        max-width: 800px;
-    }
-
-    .input-group {
-        flex-direction: row;
-        align-items: center;
-    }
-
-    label {
-        margin-bottom: 0;
-        margin-right: 10px;
-        width: 30%;
-    }
-
-    .input-container {
-        width: 70%;
-    }
-
-    input, select {
-        width: 100%;
-    }
-
-    button {
-        padding: 15px 0;
-    }
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    transition: color 0.3s, text-shadow 0.3s;
 }
 
 /* Темная тема */
 @media (prefers-color-scheme: dark) {
     body {
-        background: linear-gradient(135deg, #2a2a2a, #444444); /* Слегка светлее */
+        background: linear-gradient(135deg, #2a2a2a, #444444);
         color: #fff;
     }
 
@@ -208,7 +163,7 @@ button:hover {
     input, select {
         background: rgba(255, 255, 255, 0.1);
         color: #fff;
-        border-color: #FF8256; /* Оранжевая рамка */
+        border-color: #FF8256;
     }
 
     input:focus, select:focus {
@@ -216,7 +171,7 @@ button:hover {
     }
 
     .tab-button {
-        background: linear-gradient(135deg, #FF8256, #FFB499); /* Оранжевый фон */
+        background: linear-gradient(135deg, #FF8256, #FFB499);
         color: #000;
     }
 

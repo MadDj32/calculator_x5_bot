@@ -1,80 +1,238 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 20px;
-    background-color: #f0f0f0;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Яркий градиентный фон */
+    color: #222; /* Общий цвет текста */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    transition: background 0.5s; /* Плавный переход для фона */
 }
 
 #app {
     max-width: 600px;
-    margin: 0 auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background: rgba(255, 255, 255, 0.95); /* Полупрозрачный фон */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2); /* Увеличен тень */
+    border: 1px solid #ccc; /* Более темная рамка */
+    backdrop-filter: blur(10px); /* Эффект размытия */
+    transition: transform 0.3s, box-shadow 0.3s; /* Плавные переходы */
+}
+
+#app:hover {
+    transform: translateY(-5px); /* Поднятие при наведении */
+    box-shadow: 0 12px 40px rgba(0,0,0,0.25); /* Увеличен тень при наведении */
 }
 
 h1, h2 {
-    color: #333;
+    text-align: center;
+    color: #222; /* Более темный цвет */
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Тень для текста */
+    transition: color 0.3s, text-shadow 0.3s; /* Плавные переходы */
 }
 
 .tabs {
     display: flex;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #ccc; /* Более темная разделительная линия */
 }
 
 .tab-button {
     flex: 1;
-    padding: 10px;
+    padding: 15px;
     border: none;
-    background-color: #FFB499;
+    background: linear-gradient(135deg, #FFB499, #FF8256); /* Градиентный фон */
     cursor: pointer;
     color: black;
+    font-weight: bold; /* Сделать текст кнопок жирным */
+    transition: background 0.3s, transform 0.3s; /* Добавлена анимация */
+    border-radius: 10px 10px 0 0; /* Закругленные углы сверху */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Тень для текста */
 }
 
 .tab-button.active {
-    background-color: #FF8256;
+    background: linear-gradient(135deg, #FF8256, #FFB499); /* Градиентный фон */
     color: black;
+    transform: translateY(-2px); /* Небольшое поднятие */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Тень для текста */
+}
+
+.tab-button:hover {
+    background: linear-gradient(135deg, #FF8256, #FFB499); /* Градиентный фон */
+    transform: translateY(-2px); /* Небольшое поднятие */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Тень для текста */
 }
 
 .tab-content {
     display: none;
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.95); /* Полупрозрачный фон */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Тень для контента */
+    backdrop-filter: blur(10px); /* Эффект размытия */
+    transition: transform 0.3s, box-shadow 0.3s; /* Плавные переходы */
 }
 
 .tab-content.active {
     display: block;
+    font-weight: bold;
+}
+
+.tab-content:hover {
+    transform: translateY(-5px); /* Поднятие при наведении */
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2); /* Увеличен тень при наведении */
 }
 
 .input-group {
-    margin-bottom: 15px;
+    margin-bottom: 25px;
+    display: flex; /* Используем flexbox для выравнивания */
+    flex-direction: column; /* Выравниваем элементы по вертикали */
 }
 
 label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 10px; /* Добавляем отступ между лейблом и инпутом */
+    color: #222; /* Более темный цвет */
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Тень для текста */
+    transition: color 0.3s, text-shadow 0.3s; /* Плавные переходы */
+}
+
+.input-container {
+    display: flex;
+    justify-content: flex-end; /* Выравниваем инпуты по правому краю */
 }
 
 input, select {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    text-align: right;
+    font-weight: bold;
+    width: 40%;
+    padding: 10px;
+    border: 2px solid #FF8256; /* Сохраняем исходный цвет */
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.95); /* Полупрозрачный фон */
+    color: #222; /* Более темный цвет */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Добавлена анимация */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Тень для текста */
+}
+
+input:focus, select:focus {
+    border-color: #FF4500; /* Более темный оттенок */
+    outline: none;
+    box-shadow: 0 0 8px rgba(255, 69, 0, 0.7); /* Тень при фокусе */
 }
 
 button {
-    background-color: #FF8256;
+    background: linear-gradient(135deg, #FF8256, #FFB499); /* Градиентный фон */
     color: black;
     border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
+    padding: 15px 240px;
+    border-radius: 10px;
     cursor: pointer;
+    font-weight: bold; /* Сделать текст кнопок жирным */
+    display: block; /* Делаем кнопку блочным элементом */
+    width: 100%; /* Занимает всю доступную ширину */
+    margin-top: 20px; /* Добавляем отступ сверху */
+    transition: background 0.3s, transform 0.3s; /* Добавлена анимация */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Тень для текста */
 }
 
 button:hover {
-    background-color: #e2a691;
+    background: linear-gradient(135deg, #FF8256, #FFB499); /* Градиентный фон */
+    transform: translateY(-2px); /* Небольшое поднятие */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Тень для текста */
 }
 
-#new-result {
-    margin-top: 20px;
+#new-result, #old-result {
     font-weight: bold;
+    margin-top: 35px;
+    font-weight: bold;
+    color: #222; /* Более темный цвет */
+    text-align: left;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Тень для текста */
+    transition: color 0.3s, text-shadow 0.3s; /* Плавные переходы */
+}
+
+/* Адаптивность для больших экранов */
+@media (min-width: 768px) {
+    #app {
+        max-width: 800px;
+    }
+
+    .input-group {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    label {
+        margin-bottom: 0;
+        margin-right: 10px;
+        width: 30%;
+    }
+
+    .input-container {
+        width: 70%;
+    }
+
+    input, select {
+        width: 100%;
+    }
+
+    button {
+        padding: 15px 0;
+    }
+}
+
+/* Темная тема */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: linear-gradient(135deg, #2a2a2a, #444444); /* Слегка светлее */
+        color: #fff;
+    }
+
+    #app {
+        background: rgba(0, 0, 0, 0.95);
+        border-color: #555;
+    }
+
+    h1, h2, label, #new-result, #old-result {
+        color: #fff;
+    }
+
+    input, select {
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        border-color: #FF8256; /* Оранжевая рамка */
+    }
+
+    input:focus, select:focus {
+        border-color: #FF4500;
+    }
+
+    .tab-button {
+        background: linear-gradient(135deg, #FF8256, #FFB499); /* Оранжевый фон */
+        color: #000;
+    }
+
+    .tab-button.active, .tab-button:hover {
+        background: linear-gradient(135deg, #FFB499, #FF8256);
+    }
+
+    .tab-content {
+        background: rgba(0, 0, 0, 0.95);
+    }
+
+    button {
+        background: linear-gradient(135deg, #FF8256, #FFB499);
+        color: #000;
+    }
+
+    button:hover {
+        background: linear-gradient(135deg, #FFB499, #FF8256);
+    }
 }

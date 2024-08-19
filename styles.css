@@ -27,13 +27,14 @@ h1, h2 {
     flex: 1;
     padding: 10px;
     border: none;
-    background-color: #f0f0f0;
+    background-color: #FFB499;
     cursor: pointer;
+    color: black;
 }
 
 .tab-button.active {
-    background-color: #007bff;
-    color: #fff;
+    background-color: #FF8256;
+    color: black;
 }
 
 .tab-content {
@@ -61,8 +62,8 @@ input, select {
 }
 
 button {
-    background-color: #007bff;
-    color: #fff;
+    background-color: #FF8256;
+    color: black;
     border: none;
     padding: 10px 20px;
     border-radius: 4px;
@@ -70,7 +71,7 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #FFB499;
 }
 
 #new-result {

@@ -3,7 +3,7 @@ let tg = window.Telegram.WebApp;
 tg.expand();
 
 tg.MainButton.textColor = "#FFFFFF";
-tg.MainButton.color = "#2cab37";
+tg.MainButton.color = "#FF8256";
 
 document.addEventListener('DOMContentLoaded', function() {
     const tabButtons = document.querySelectorAll('.tab-button');
@@ -32,7 +32,7 @@ function calculateNewPremium() {
     const replacements = parseFloat(document.getElementById('replacements').value);
 
     // Определение второго значения для P2
-    let p2SecondValue = defectRate <= 1.1 ? 3 : 2;
+    let p2SecondValue = defectRate === 1.1 ? 3 : 2;
 
     // Расчет премии
     let premium = positions * defectRate * p2SecondValue * speed * replacements;
@@ -40,7 +40,7 @@ function calculateNewPremium() {
     // Округление до двух знаков после запятой
     premium = Math.round(premium * 100) / 100;
 
-    document.getElementById('new-result').textContent = `Новая премия: ${premium.toFixed(2)}`;
+    document.getElementById('new-result').textContent = `ПРЕМИЯ: ${premium.toFixed(2)}`;
 
     // Отправка данных в Telegram
     tg.sendData(JSON.stringify({

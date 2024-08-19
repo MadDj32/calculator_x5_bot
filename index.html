@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Калькулятор премий</title>
+    <title>КАЛЬКУЛЯТОР</title>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div id="app">
-        <h1>Калькулятор премий</h1>
+        <h1>КАЛЬКУЛЯТОР</h1>
         <div class="tabs">
-            <button class="tab-button active" data-tab="new">Новая премия</button>
-            <button class="tab-button" data-tab="old">Старая премия</button>
-            <button class="tab-button" data-tab="compare">Сравнение</button>
+            <button class="tab-button active" data-tab="new">ПРЕМИЯ</button>
+            <button class="tab-button" data-tab="old">СТАРАЯ ПРЕМИЯ</button>
+            <button class="tab-button" data-tab="compare">СРАВНЕНИЯ ПРЕМИЙ</button>
         </div>
         <div id="new-premium" class="tab-content active">
-            <h2>Расчет новой премии</h2>
+            <h2>Расчет премии</h2>
             <div class="input-group">
                 <label for="positions">Собрано позиций:</label>
                 <input type="number" id="positions" name="positions">
@@ -32,7 +32,7 @@
                 </select>
             </div>
             <div class="input-group">
-                <label for="speed">Скорость сбора одной позиции:</label>
+                <label for="speed">СРЕДНЯЯ СКОРОСТЬ СБОРА ОДНОЙ ПОЗИЦИИ:</label>
                 <select id="speed" name="speed">
                     <option value="1.1">ОТ 0 ДО 36</option>
                     <option value="1">ОТ 36 ДО 41</option>
@@ -42,7 +42,7 @@
                 </select>
             </div>
             <div class="input-group">
-                <label for="replacements">Доля ПРИМЕНЕННЫХ ЗАМЕН НА ЗВОНКЕ:</label>
+                <label for="replacements">ДОЛЯ ПРИМЕНЕННЫХ ЗАМЕН НА ЗВОНКЕ:</label>
                 <select id="replacements" name="replacements">
                     <option value="1">ОТ 0 ДО 50%</option>
                     <option value="1.1">ОТ 50 ДО 71%</option>
@@ -61,61 +61,6 @@
             <!-- Здесь будет содержимое для сравнения премий -->
         </div>
     </div>
-    <script src="app.js"></script>
-</body>
-</html>
-            <select id="replacementRate">
-                <option value="1">ОТ 0 ДО 50%</option>
-                <option value="1.1">ОТ 50 ДО 71%</option>
-                <option value="1.2">ОТ 71 ДО 100%</option>
-            </select>
-        </form>
-        <button onclick="calculatePremium('new')">Рассчитать</button>
-        <div id="newPremiumResult"></div>
-    </div>
-    
-    <div id="old-premium" class="tab-content">
-        <h2>Расчет старой премии</h2>
-        <!-- Повторите форму как для новой премии -->
-        <form id="oldPremiumForm">
-            <!-- Поля ввода аналогичные newPremiumForm -->
-            <label>Собрано позиций</label>
-            <input type="number" id="oldPositionsCollected" required>
-
-            <label>Defect Rate TC5</label>
-            <select id="oldDefectRate">
-                <option value="1.1">ОТ 0 ДО 5%</option>
-                <option value="1">ОТ 5 ДО 6.9%</option>
-                <option value="0.9">ОТ 7 ДО 10%</option>
-                <option value="0.8">ОТ 10 ДО 12%</option>
-                <option value="0.5">БОЛЬШЕ 12%</option>
-            </select>
-
-            <label>Скорость сбора одной позиции</label>
-            <select id="oldCollectionSpeed">
-                <option value="1.1">ОТ 0 ДО 36</option>
-                <option value="1">ОТ 36 ДО 41</option>
-                <option value="0.9">ОТ 41 ДО 46</option>
-                <option value="0.8">ОТ 46 ДО 50</option>
-                <option value="0.5">БОЛЬШЕ 50</option>
-            </select>
-
-            <label>Доля ПРИМЕНЕННЫХ ЗАМЕН НА ЗВОНКЕ</label>
-            <select id="oldReplacementRate">
-                <option value="1">ОТ 0 ДО 50%</option>
-                <option value="1.1">ОТ 50 ДО 71%</option>
-                <option value="1.2">ОТ 71 ДО 100%</option>
-            </select>
-        </form>
-        <button onclick="calculatePremium('old')">Рассчитать</button>
-        <div id="oldPremiumResult"></div>
-    </div>
-    
-    <div id="compare" class="tab-content">
-        <h2>Сравнение премий</h2>
-        <div id="comparisonResult"></div>
-    </div>
-
     <script src="app.js"></script>
 </body>
 </html>

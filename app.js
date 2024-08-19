@@ -1,58 +1,54 @@
-// Telegram WebApp initialization
 let tg = window.Telegram.WebApp;
+
 tg.expand();
 
 tg.MainButton.textColor = "#FFFFFF";
 tg.MainButton.color = "#2cab37";
 
-// Tab switching logic
-const tabs = document.querySelectorAll('.tab');
-const tabContents = document.querySelectorAll('.tab-content');
+document.addEventListener('DOMContentLoaded', function() {
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
 
-tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-        tabs.forEach(t => t.classList.remove('active'));
-        tabContents.forEach(tc => tc.classList.remove('active'));
-
-        tab.classList.add('active');
-        document.getElementById(tab.dataset.tab).classList.add('active');
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const tabName = button.getAttribute('data-tab');
+            
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+            
+            button.classList.add('active');
+            document.getElementById(`${tabName}-premium`).classList.add('active');
+        });
     });
+
+    const calculateNewButton = document.getElementById('calculate-new');
+    calculateNewButton.addEventListener('click', calculateNewPremium);
 });
 
-function calculatePremium(type) {
-    const formId = type === 'new' ? 'newPremiumForm' : 'oldPremiumForm';
-    const positionsCollected = parseFloat(document.querySelector(`#${formId} #positionsCollected`).value);
-    const defectRate = parseFloat(document.querySelector(`#${formId} #defectRate`).value);
-    const collectionSpeed = parseFloat(document.querySelector(`#${formId} #collectionSpeed`).value);
-    const replacementRate = parseFloat(document.querySelector(`#${formId} #replacementRate`).value);
-    
-    let multiplier = (defectRate <= 1 ? 2 : 1);
+function calculateNewPremium() {
+    const positions = parseFloat(document.getElementById('positions').value);
+    const defectRate = parseFloat(document.getElementById('defect-rate').value);
+    const speed = parseFloat(document.getElementById('speed').value);
+    const replacements = parseFloat(document.getElementById('replacements').value);
 
-    const result = positionsCollected * defectRate * multiplier * collectionSpeed * replacementRate;
-    const roundedResult = result.toFixed(2);
+    // Определение второго значения для P2
+    let p2SecondValue = defectRate <= 1.1 ? 3 : 2;
 
-    document.getElementById(`${type}PremiumResult`).textContent = `Результат: ${roundedResult}`;
+    // Расчет премии
+    let premium = positions * defectRate * p2SecondValue * speed * replacements;
 
-    if (type === 'new') {
-        tg.sendData(`Новая премия рассчитана: ${roundedResult}`);
-    } else {
-        tg.sendData(`Старая премия рассчитана: ${roundedResult}`);
-    }
+    // Округление до двух знаков после запятой
+    premium = Math.round(premium * 100) / 100;
 
-    comparePremiums();
+    document.getElementById('new-result').textContent = `Новая премия: ${premium.toFixed(2)}`;
+
+    // Отправка данных в Telegram
+    tg.sendData(JSON.stringify({
+        action: 'calculate_new_premium',
+        result: premium
+    }));
 }
 
-function comparePremiums() {
-    const newPremiumResult = parseFloat(document.getElementById('newPremiumResult').textContent.split(': ')[1]);
-    const oldPremiumResult = parseFloat(document.getElementById('oldPremiumResult').textContent.split(': ')[1]);
-
-    const comparisonResult = document.getElementById('comparisonResult');
-
-    if (!isNaN(newPremiumResult) && !isNaN(oldPremiumResult)) {
-        if (newPremiumResult > oldPremiumResult) {
-            comparisonResult.innerHTML = `<p style="color:green;">Новая премия выше (${newPremiumResult})</p><p style="color:red;">Старая премия ниже (${oldPremiumResult})</p>`;
-        } else {
-            comparisonResult.innerHTML = `<p style="color:red;">Новая премия ниже (${newPremiumResult})</p><p style="color:green;">Старая премия выше (${oldPremiumResult})</p>`;
-        }
-    }
-}
+Telegram.WebApp.onEvent("mainButtonClicked", function(){
+    tg.sendData("Кнопка была нажата");
+});

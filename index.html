@@ -31,7 +31,15 @@
                 </select>
             </div>
             <div class="input-group">
-                <label for="speed">Средняя скорость сбора одной позиции:</label>
+                <label for="replacements">Доля примененных замен на звонке:</label>
+                <select id="replacements" name="replacements">
+                    <option value="1">ОТ 0 ДО 50%</option>
+                    <option value="1.1">ОТ 50 ДО 71%</option>
+                    <option value="1.2">ОТ 71 ДО 100%</option>
+                </select>
+            </div>
+            <div class="input-group">
+     <label for="speed">Средняя скорость сбора одной позиции:</label>
                 <select id="speed" name="speed">
                     <option value="1.1">ОТ 0 ДО 35</option>
                     <option value="1">ОТ 36 ДО 40</option>
@@ -40,19 +48,15 @@
                     <option value="0.5">БОЛЬШЕ >50</option>
                 </select>
             </div>
-            <div class="input-group">
-                <label for="replacements">Доля примененных замен на звонке:</label>
-                <select id="replacements" name="replacements">
-                    <option value="1">ОТ 0 ДО 50%</option>
-                    <option value="1.1">ОТ 50 ДО 71%</option>
-                    <option value="1.2">ОТ 71 ДО 100%</option>
-                </select>
-            </div>
             <button id="calculate-new">РАССЧИТАТЬ</button>
             <div id="new-result"></div>
         </div>
         <div id="old-premium" class="tab-content">
             <h2>РАСЧЕТ СТАРОЙ ПРЕМИИ</h2>
+            <div class="input-group">
+                <label for="collected-positions">Собрано позиций:</label>
+                <input type="number" id="collected-positions" name="collected-positions">
+            </div>
             <div class="input-group">
                 <label for="orders">Количество заказов:</label>
                 <input type="number" id="orders" name="orders">
@@ -62,27 +66,23 @@
                 <input type="number" id="shifts" name="shifts">
             </div>
             <div class="input-group">
-                <label for="collected-positions">Собрано позиций:</label>
-                <input type="number" id="collected-positions" name="collected-positions">
-            </div>
-            <div class="input-group">
-                <label for="speed-coefficient">Скорость сборки одной позиции:</label>
-                <select id="speed-coefficient" name="speed-coefficient">
-                    <option value="1.1">ОТ 0 ДО 45</option>
-                    <option value="1">ОТ 45 ДО 49</option>
-                    <option value="0.9">ОТ 49 ДО 53</option>
-                    <option value="0.8">ОТ 54 ДО 58</option>
-                    <option value="0.5">БОЛЬШЕ >59</option>
-                </select>
-            </div>
-            <div class="input-group">
-                <label for="correction-coefficient">Процент корректировок:</label>
+                <label for="correction-coefficient">Доля заказов с корректировками:</label>
                 <select id="correction-coefficient" name="correction-coefficient">
                     <option value="1.1">ОТ 0 ДО 7%</option>
                     <option value="1">ОТ 7.1 ДО 11%</option>
                     <option value="0.9">ОТ 11.1 ДО 16%</option>
                     <option value="0.8">ОТ 16.1 ДО 20%</option>
                     <option value="0.5">БОЛЬШЕ >20%</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="speed-coefficient">Средняя скорость сбора одной позиции:</label>
+                <select id="speed-coefficient" name="speed-coefficient">
+                    <option value="1.1">ОТ 0 ДО 45</option>
+                    <option value="1">ОТ 45 ДО 49</option>
+                    <option value="0.9">ОТ 49 ДО 53</option>
+                    <option value="0.8">ОТ 54 ДО 58</option>
+                    <option value="0.5">БОЛЬШЕ >59</option>
                 </select>
             </div>
             <button id="calculate-old">РАССЧИТАТЬ</button>

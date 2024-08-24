@@ -40,18 +40,18 @@ document.addEventListener('DOMContentLoaded', function() {
         let p2Multiplier = defectRate === 1.1 ? 3 : 2;
 
         let premium = positions * defectRate * p2Multiplier * speed * replacements;
-        premium = Math.round(premium * 100) / 100;
+        premium = Math.round(premium * 1000) / 1000; // Округление до 3 знаков после запятой
 
         let premiumWithTax = premium * 0.87;
-        premiumWithTax = Math.round(premiumWithTax * 100) / 100;
+        premiumWithTax = Math.round(premiumWithTax * 1000) / 1000; // Округление до 3 знаков после запятой
 
         let coefficient = 1 * defectRate * p2Multiplier * speed * replacements;
-        coefficient = Math.round(coefficient * 100) / 100;
+        coefficient = Math.round(coefficient * 1000) / 1000; // Округление до 3 знаков после запятой
 
         document.getElementById('new-result').innerHTML = `
-            <div style="margin-left: 20px;">ПРЕМИЯ: ${premium.toFixed(2)} (БЕЗ)</div>
-            <div style="margin-left: 20px;">ПРЕМИЯ: ${premiumWithTax.toFixed(2)} (С УЧЕТОМ 13%)</div>
-            <div style="margin-left: 20px;">КОЭФФИЦИЕНТ: ${coefficient.toFixed(2)}</div>
+            <div style="margin-left: 20px;">ПРЕМИЯ: ${premium.toFixed(3)} (БЕЗ)</div>
+            <div style="margin-left: 20px;">ПРЕМИЯ: ${premiumWithTax.toFixed(3)} (С УЧЕТОМ 13%)</div>
+            <div style="margin-left: 20px;">КОЭФФИЦИЕНТ: ${coefficient.toFixed(3)}</div>
         `;
 
         tg.sendData(JSON.stringify({
@@ -77,18 +77,18 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         let coefficient = k1 * speedCoefficient * correctionCoefficient;
-        coefficient = Math.round(coefficient * 100) / 100;
+        coefficient = Math.round(coefficient * 1000) / 1000; // Округление до 3 знаков после запятой
 
         let premium = coefficient * collectedPositions;
-        premium = Math.round(premium * 100) / 100;
+        premium = Math.round(premium * 1000) / 1000; // Округление до 3 знаков после запятой
 
         let premiumWithTax = premium * 0.87;
-        premiumWithTax = Math.round(premiumWithTax * 100) / 100;
+        premiumWithTax = Math.round(premiumWithTax * 1000) / 1000; // Округление до 3 знаков после запятой
 
         document.getElementById('old-result').innerHTML = `
-            <div style="margin-left: 20px;">ПРЕМИЯ: ${premium.toFixed(2)} (БЕЗ)</div>
-            <div style="margin-left: 20px;">ПРЕМИЯ: ${premiumWithTax.toFixed(2)} (С УЧЕТОМ 13%)</div>
-            <div style="margin-left: 20px;">КОЭФФИЦИЕНТ: ${coefficient.toFixed(2)}</div>
+            <div style="margin-left: 20px;">ПРЕМИЯ: ${premium.toFixed(3)} (БЕЗ)</div>
+            <div style="margin-left: 20px;">ПРЕМИЯ: ${premiumWithTax.toFixed(3)} (С УЧЕТОМ 13%)</div>
+            <div style="margin-left: 20px;">КОЭФФИЦИЕНТ: ${coefficient.toFixed(3)}</div>
         `;
     }
 

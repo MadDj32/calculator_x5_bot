@@ -14,10 +14,17 @@ document.addEventListener('DOMContentLoaded', function() {
             const tabName = button.getAttribute('data-tab');
             
             tabButtons.forEach(btn => btn.classList.remove('active'));
-            tabContents.forEach(content => content.classList.remove('active'));
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+                content.style.opacity = 0;
+            });
             
             button.classList.add('active');
-            document.getElementById(`${tabName}-premium`).classList.add('active');
+            const activeTab = document.getElementById(`${tabName}-premium`);
+            activeTab.classList.add('active');
+            setTimeout(() => {
+                activeTab.style.opacity = 1;
+            }, 100);
         });
     });
 

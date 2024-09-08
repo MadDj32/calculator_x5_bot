@@ -56,9 +56,9 @@ document.addEventListener('DOMContentLoaded', function() {
         coefficient = Math.round(coefficient * 1000) / 1000; // Округление до 3 знаков после запятой
 
         document.getElementById('new-result').innerHTML = `
-            <div style="margin-left: 20px;">ПРЕМИЯ: ${premium.toFixed(3)} (БЕЗ)</div>
-            <div style="margin-left: 20px;">ПРЕМИЯ: ${premiumWithTax.toFixed(3)} (С УЧЕТОМ 13%)</div>
-            <div style="margin-left: 20px;">КОЭФФИЦИЕНТ: ${coefficient.toFixed(3)}</div>
+            <div style="margin-left: 7px;">ПРЕМИЯ: ${premium.toFixed(3)} (БЕЗ)</div>
+            <div style="margin-left: 7px;">ПРЕМИЯ: ${premiumWithTax.toFixed(3)} (С УЧЕТОМ 13%)</div>
+            <div style="margin-left: 7px;">КОЭФФИЦИЕНТ: ${coefficient.toFixed(3)}</div>
         `;
 
         tg.sendData(JSON.stringify({
@@ -93,9 +93,9 @@ document.addEventListener('DOMContentLoaded', function() {
         premiumWithTax = Math.round(premiumWithTax * 1000) / 1000; // Округление до 3 знаков после запятой
 
         document.getElementById('old-result').innerHTML = `
-            <div style="margin-left: 20px;">ПРЕМИЯ: ${premium.toFixed(3)} (БЕЗ)</div>
-            <div style="margin-left: 20px;">ПРЕМИЯ: ${premiumWithTax.toFixed(3)} (С УЧЕТОМ 13%)</div>
-            <div style="margin-left: 20px;">КОЭФФИЦИЕНТ: ${coefficient.toFixed(3)}</div>
+            <div style="margin-left: 7px;">ПРЕМИЯ: ${premium.toFixed(3)} (БЕЗ)</div>
+            <div style="margin-left: 7px;">ПРЕМИЯ: ${premiumWithTax.toFixed(3)} (С УЧЕТОМ 13%)</div>
+            <div style="margin-left: 7px;">КОЭФФИЦИЕНТ: ${coefficient.toFixed(3)}</div>
         `;
     }
 

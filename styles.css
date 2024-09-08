@@ -37,8 +37,8 @@ h1, h2 {
 
 .tabs {
     display: flex;
-    margin-bottom: 20px;
-    border-bottom: 1px solid #ccc;
+    margin-bottom: 4px;
+    border-bottom: 3px solid #ccc;
 }
 
 .tab-button {
@@ -57,20 +57,20 @@ h1, h2 {
 .tab-button.active {
     background: linear-gradient(135deg, #FF8256, #FFB499);
     color: black;
-    transform: translateX(3px) translateY(-5px);
+    transform: translateY(-7px);
     text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 
 .tab-button:hover {
     background: linear-gradient(135deg, #FF8256, #FFB499);
-    transform: translateY(-7px);
+    transform: translateY(-8px);
     text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 
 .tab-content {
     display: none;
     opacity: 0;
-    padding: 18px;
+    padding: 15px;
     border-radius: 15px;
     background: rgba(250, 250, 250, 0.95);
     box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
@@ -102,7 +102,7 @@ label {
 input, select {
     text-align: right;
     font-weight: bold;
-    width: 100%;
+    width: 97%;
     padding: 10px;
     border: 3px solid #FFB499;
     border-radius: 10px;

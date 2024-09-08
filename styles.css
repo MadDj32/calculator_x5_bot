@@ -44,7 +44,7 @@ h1, h2 {
     flex: 1;
     padding: 10px;
     border: none;
-    background: linear-gradient(135deg, #FFB499, #FF8256);
+    background: linear-gradient(135deg, #FFB499, #ffdacc);
     cursor: pointer;
     color: black;
     font-weight: bold;
@@ -54,9 +54,9 @@ h1, h2 {
 }
 
 .tab-button.active {
-    background: linear-gradient(135deg, #FF8256, #FFB499);
+    background: linear-gradient(-135deg, #FF8256, #FFB499);
     color: black;
-    transform: translateY(-2px);
+    transform: translateY(-3px);
     text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 
@@ -96,7 +96,7 @@ input, select {
     font-weight: bold;
     width: 100%;
     padding: 10px;
-    border: 3px solid #feb47b;
+    border: 3px solid #FFB499;
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.95);
     color: #222;

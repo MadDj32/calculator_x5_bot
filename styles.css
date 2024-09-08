@@ -2,7 +2,7 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 10px;
-    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    background: linear-gradient(170deg, #ff7e5f, #feb47b);
     color: #222;
     display: flex;
     justify-content: center;
@@ -10,7 +10,7 @@ body {
     height: auto;
     min-height: 100vh;
     overflow-y: auto;
-    transition: background 0.5s;
+    transition: background 0.3s;
 }
 
 #app {
@@ -18,26 +18,26 @@ body {
     max-width: 600px;
     background: rgba(255, 255, 255, 0.95);
     padding: 20px;
-    border-radius: 15px;
+    border-radius: 30px;
     box-shadow: 0 8px 30px rgba(0,0,0,0.2);
     border: 1px solid #ccc;
     backdrop-filter: blur(10px);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.2s, box-shadow 0.2s;
     overflow: visible;
 }
 
 h1, h2 {
     text-align: center;
     color: #222;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
     transition: color 0.3s, text-shadow 0.3s;
 }
 
 .tabs {
     display: flex;
-    margin-bottom: 10px;
-    border-bottom: 2px solid #ccc;
+    margin-bottom: 5px;
+    border-bottom: 3px solid #ccc;
 }
 
 .tab-button {
@@ -49,7 +49,7 @@ h1, h2 {
     color: black;
     font-weight: bold;
     transition: background 0.3s, transform 0.3s;
-    border-radius: 10px 10px 0 0;
+    border-radius: 9px 6px 3px 3px;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 
@@ -63,10 +63,10 @@ h1, h2 {
 .tab-content {
     display: none;
     opacity: 0;
-    padding: 15px;
+    padding: 8px;
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
     backdrop-filter: blur(10px);
     transition: opacity 0.5s ease-in-out, transform 0.3s, box-shadow 0.3s;
 }
@@ -96,7 +96,7 @@ input, select {
     font-weight: bold;
     width: 100%;
     padding: 10px;
-    border: 2px solid #FF8256;
+    border: 3px solid #feb47b;
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.95);
     color: #222;
@@ -106,22 +106,22 @@ input, select {
 }
 
 input:focus, select:focus {
-    border-color: #FF4500;
+    border-color: #ff8c69;
     outline: none;
-    box-shadow: 0 0 8px rgba(255, 69, 0, 0.7);
+    box-shadow: 0 0 11px rgba(255, 126, 96, 0.9);
 }
 
 button {
     background: linear-gradient(135deg, #FF8256, #FFB499);
     color: black;
     border: none;
-    padding: 15px;
-    border-radius: 10px;
+    padding: 12px;
+    border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
     display: block;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 10px;
     transition: background 0.3s, transform 0.3s;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
@@ -133,7 +133,7 @@ button:hover {
 
 #new-result, #old-result {
     font-weight: bold;
-    margin-top: 25px;
+    margin-top: 30px;
     color: #222;
     text-align: left;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
